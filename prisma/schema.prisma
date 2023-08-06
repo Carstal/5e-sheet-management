@@ -91,6 +91,7 @@ model Sheet {
     hp            Int
     armor         Int
     speed         Int
+    prof          Int
 
     str           Int
     dex           Int
@@ -98,6 +99,9 @@ model Sheet {
     int           Int
     wis           Int
     cha           Int
+
+    savingProf    String[]
+    skillsProf    String[]
 
     userId        String
     playerName    String
