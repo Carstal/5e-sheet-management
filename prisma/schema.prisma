@@ -64,3 +64,42 @@ model VerificationToken {
 
     @@unique([identifier, token])
 }
+
+model Campaign {
+    id            String    @id @default(cuid())
+    name          String
+    userId        String
+
+    user          User   @relation(fields: [userId], references: [id])
+}
+
+model SheetXRef {
+    id            String    @id @default(cuid())
+    campaignId    String
+    sheetId       String
+}
+
+model Sheet {
+    id            String    @id @default(cuid())
+    characterName  String
+    background     String
+    class          String
+    aligment       String
+    xp             Int
+    level          Int
+
+    hp            Int
+    armor         Int
+    speed         Int
+
+    str           Int
+    dex           Int
+    con           Int
+    int           Int
+    wis           Int
+    cha           Int
+
+    userId        String
+    playerName    String
+    user          User   @relation(fields: [userId, playerName], references: [id, name])
+}
