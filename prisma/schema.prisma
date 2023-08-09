@@ -70,7 +70,7 @@ model Campaign {
     name          String
     userId        String
 
-    user          User   @relation(fields: [userId], references: [id])
+    //user          User   @relation(fields: [userId], references: [id])
 }
 
 model SheetXRef {
@@ -100,10 +100,10 @@ model Sheet {
     wis           Int
     cha           Int
 
-    savingProf    String[]
-    skillsProf    String[]
+    //savingProf    String[]
+    //skillsProf    String[]
 
     userId        String
     playerName    String
-    user          User   @relation(fields: [userId, playerName], references: [id, name])
+    //user          User   @relation(fields: [userId, playerName], references: [id, name])
 }
