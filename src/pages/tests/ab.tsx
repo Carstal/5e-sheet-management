@@ -1,53 +1,67 @@
-// import React, { Component } from "react";
+import React, { Component, ChangeEvent } from "react";
 
-// // Component A
-// const ComponentA = ({ value, updateValue }) => {
-//   const handleChange = (event) => {
-//     updateValue(event.target.value);
-//   };
+interface A {
+  value: number;
+  updateValue: (newValue: number) => void;
+}
 
-//   return (
-//     <div>
-//       <h2>Component A</h2>
-//       <input type="number" value={value} onChange={handleChange} />
-//       <p>Value: {value}</p>
-//     </div>
-//   );
-// };
+// Component A
+const ComponentA: React.FC<A> = ({ value, updateValue }) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const newValue = parseInt(event.target.value, 10);
+    updateValue(newValue);
+  };
 
-// // Component B
-// const ComponentB = ({ value }) => {
-//   return (
-//     <div>
-//       <h2>Component B</h2>
-//       <p>Value: {value}</p>
-//     </div>
-//   );
-// };
+  return (
+    <div>
+      <h2>Component A</h2>
+      <input type="number" value={value} onChange={handleChange} />
+      <p>Value: {value}</p>
+    </div>
+  );
+};
 
-// // Parent Component
-// class ParentComponent extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       sharedValue: 0
-//     };
-//   }
+interface B {
+  value: number;
+}
 
-//   updateSharedValue = (newValue) => {
-//     this.setState({ sharedValue: newValue });
-//   };
+// Component B
+const ComponentB: React.FC<B> = ({ value }) => {
+  return (
+    <div>
+      <h2>Component B</h2>
+      <p>Value: {value}</p>
+    </div>
+  );
+};
 
-//   render() {
-//     const { sharedValue } = this.state;
+interface Parent {
+  sharedValue: number;
+}
 
-//     return (
-//       <div>
-//         <ComponentA value={sharedValue} updateValue={this.updateSharedValue} />
-//         <ComponentB value={sharedValue} />
-//       </div>
-//     );
-//   }
-// }
+// Parent Component
+class ParentComponent extends Component<{}, Parent> {
+  constructor(props: {}) {
+    super(props);
+    this.state = {
+      sharedValue: 0
+    };
+  }
 
-// export default ParentComponent;
+  updateSharedValue = (newValue: number) => {
+    this.setState({ sharedValue: newValue });
+  };
+
+  render() {
+    const { sharedValue } = this.state;
+
+    return (
+      <div>
+        <ComponentA value={sharedValue} updateValue={this.updateSharedValue} />
+        <ComponentB value={sharedValue} />
+      </div>
+    );
+  }
+}
+
+export default ParentComponent;
