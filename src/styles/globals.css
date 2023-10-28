@@ -11,3 +11,93 @@
         -moz-appearance: textfield !important;
     }
 }
+.formContainer{
+    width: 80vw;
+}
+.feudForm{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+}
+.prompt{
+    width: 85%;
+}
+.feudContainer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.feudLabel{
+    font-size: 48px;
+    line-height: 48px;
+    color:#FFF;
+    font-weight: bold;
+}
+.feudContainer input, .prompt{
+    border: 2px solid #000;
+    height: 50px;
+    font-size: 48px;
+    line-height: 48px;
+}
+.answer{
+    width:70%;
+    margin-right:5%;
+}
+.points{
+    width:10%;
+}
+
+.submitFeud{
+    height: 100px;
+    width: 50%;
+    margin: 25px auto;
+    font-size: 30px;
+    line-height: 100px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #FFF;
+    border: 5px solid #000;
+    border-radius: 25px;
+    cursor:pointer;
+}
+
+.feudAnswer{
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+    min-height:100px;
+    height:fit-content;
+    background: #2d3490c2;
+    border: 5px solid #bea500;
+    border-radius: 25px;
+}
+.feudAnswer div{
+    height:100%;
+    font-size: 48px;
+    line-height: 100px;
+    color:#FFF;
+    font-weight: bold;
+}
+.feudText{
+    width:70%;
+    margin-left:5%;
+    border-right: 5px solid #bea500;
+}
+.feudNum{
+    width:20%;
+    margin:0px 5px;
+    text-align: center;
+}
+.feudCover{
+    z-index: 2;
+    width: 100%;
+    text-align: center;
+}
+.feudCover span{
+    border: 5px solid #bea500;
+    padding:10px 20px;
+    border-radius: 50%;
+}
+.hidden{
+    display: none;
+}

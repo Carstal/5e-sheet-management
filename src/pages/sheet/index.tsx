@@ -1,14 +1,16 @@
 import Head from "next/head";
-import { api } from "~/utils/api";
 import { useState } from "react";
 import StatBlock from "components/stat";
 
 export default function Home() {
-    const hello = api.example.hello.useQuery({ text: "from tRPC" });
     const [wis, setWis] = useState(10);
+    const [wisMod, setWisMod] = useState(0);
     const [str, setStr] = useState(10);
+    const [strMod, setStrMod] = useState(0);
     const [int, setInt] = useState(10);
+    const [intMod, setIntMod] = useState(0);
     const [cha, setCha] = useState(10);
+    const [chaMod, setChaMod] = useState(0);
     const wisName = 'Wisdom';
     const strName = 'Strength';
     const intName = 'Intelligence';
