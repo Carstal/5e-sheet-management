@@ -3,18 +3,31 @@ import { useState } from "react";
 import StatBlock from "components/stat";
 
 export default function Home() {
-    const [wis, setWis] = useState(10);
-    const [wisMod, setWisMod] = useState(0);
+
+    const strName = 'Strength';
     const [str, setStr] = useState(10);
     const [strMod, setStrMod] = useState(0);
+
+    const dexName = 'Dexterity';
+    const [dex, setDex] = useState(10);
+    const [dexMod, setDexMod] = useState(0);
+
+    const conName = 'Constitution';
+    const [con, setCon] = useState(10);
+    const [conMod, setConMod] = useState(0);
+
+    const intName = 'Intelligence';
     const [int, setInt] = useState(10);
     const [intMod, setIntMod] = useState(0);
+
+    const wisName = 'Wisdom';
+    const [wis, setWis] = useState(10);
+    const [wisMod, setWisMod] = useState(0);
+
+    const chaName = 'Charisma';
     const [cha, setCha] = useState(10);
     const [chaMod, setChaMod] = useState(0);
-    const wisName = 'Wisdom';
-    const strName = 'Strength';
-    const intName = 'Intelligence';
-    const chaName = 'Charisma';
+
     return (
     <>
         <Head>
@@ -28,10 +41,12 @@ export default function Home() {
             Stat <span className="text-[hsl(280,100%,70%)]">Blocks</span>
             </h1>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
-            <StatBlock name={wisName} num={wis}/>
             <StatBlock name={strName} num={str}/>
-            <StatBlock name={chaName} num={cha}/>
+            <StatBlock name={dexName} num={dex}/>
+            <StatBlock name={conName} num={con}/>
             <StatBlock name={intName} num={int}/>
+            <StatBlock name={wisName} num={wis}/>
+            <StatBlock name={chaName} num={cha}/>
             </div>
         </div>
         </main>

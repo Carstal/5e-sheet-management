@@ -101,3 +101,14 @@
 .hidden{
     display: none;
 }
+
+.statBlock div div input{
+    width: 33%;
+    --tw-text-opacity: 1;
+    color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+
+.statBlock div div button{
+    width: 33%;
+    min-width: 50px;
+}

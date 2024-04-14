@@ -33,7 +33,7 @@ const StatBlock: FC<StatParams> = ({ name, num }) => {
     },[count]);
 
   return (
-    <div className="flex max-w-xs flex-col rounded-xl bg-gradient-to-b from-[#2e026d] to-[#15162c] p-4 m-5 text-white hover:bg-white/20 h-32">
+    <div className="flex max-w-xs flex-col rounded-xl bg-gradient-to-b from-[#2e026d] to-[#15162c] p-4 m-5 text-white hover:bg-white/20 h-32 statBlock">
         <div className="flex flex-row justify-between">
           <h3 className="text-2xl font-bold">{name}</h3>
           <h3 className="pr-5 text-2xl font-bold">{modPrefix}{mod}</h3>
