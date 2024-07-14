@@ -34,12 +34,12 @@ const StatBlock: FC<StatParams> = ({ name, num }) => {
 
   return (
     <div className="flex max-w-xs flex-col rounded-xl bg-gradient-to-b from-[#2e026d] to-[#15162c] p-4 m-5 text-white hover:bg-white/20 h-32 statBlock">
-        <div className="flex flex-row justify-between">
-          <h3 className="text-2xl font-bold">{name}</h3>
-          <h3 className="pr-5 text-2xl font-bold">{modPrefix}{mod}</h3>
+        <div className="flex flex-col justify-between">
+          <h3 className="text-2xl font-bold text-center">{name}</h3>
+          <h3 className="pr-5 text-2xl font-bold text-center">{modPrefix}{mod}</h3>
         </div>
-        <div className="mt-5 flex h-10 w-full flex-row rounded-lg bg-transparent">
-          <div className="flex flex-row w-1/2 justify-start">
+        <div className="mt-5 flex h-10 w-full flex-col rounded-lg bg-transparent">
+          <div className="flex flex-row w-1/2 justify-center">
             <button
               onClick={decrement}
               data-action="decrement"
@@ -55,10 +55,10 @@ const StatBlock: FC<StatParams> = ({ name, num }) => {
               <span className="m-auto text-2xl font-thin">+</span>
             </button>
             </div>
-          <div className="flex flex-row w-1/2">
+          <div className="flex flex-row w-1/2 justify-center">
           <input
             type="number"
-            className="flex w-full items-center rounded-md bg-gray-300 p-1.5 text-center text-2xl font-semibold text-gray-700  outline-none hover:text-black focus:text-black  focus:outline-none mr-5"
+            className="flex w-full items-center rounded-md p-1.5 text-center text-2xl font-semibold text-gray-700  outline-none hover:text-black focus:text-black  focus:outline-none mr-5"
             name="custom-input-number"
             id={name}
             value={count}
